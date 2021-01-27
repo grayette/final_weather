@@ -21,15 +21,14 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind-speed");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
-    let precipitationElement = document.querySelector("#precipitation");
-    
+        
     celsiusTemperature = response.data.main.temp;
     
     temperatureElement.innerHTML = Math.round (response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     description.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = response.data.main.humidity;
-    windElement.innerHTML = Math.round(response.data.wind.speed);
+    windElement.innerHTML = Math.round(response.data.wind.speed * 2.237);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     iconElement.setAttribute(
         "src",
